@@ -30,7 +30,7 @@ export const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
         <button
           type="button"
           onClick={() => onCategoryChange("")}
-          className={`select-none whitespace-nowrap px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300
+          className={`select-none whitespace-nowrap px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer
             ${
               selectedCategory === ""
                 ? "bg-indigo-600 text-white shadow-[0_8px_15px_rgba(99,102,241,0.3)]"
