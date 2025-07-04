@@ -73,7 +73,7 @@ export const PatternCard: React.FC<PatternCardProps> = ({
         <div className="flex gap-3">
           <button
             onClick={() => onPreview(pattern)}
-            className={`flex-1 text-sm py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 font-medium ${
+            className={`flex-1 text-sm py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 font-medium cursor-pointer ${
               isCurrentlyPreviewed
                 ? "bg-blue-100 text-blue-700 border border-blue-200"
                 : "bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200 hover:border-gray-300"
@@ -84,7 +84,7 @@ export const PatternCard: React.FC<PatternCardProps> = ({
           </button>
           <button
             onClick={() => onCopy(pattern.code, pattern.name)}
-            className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-sm py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 font-medium shadow-lg hover:shadow-xl"
+            className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white text-sm py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 font-medium shadow-lg hover:shadow-xl cursor-pointer"
           >
             <Copy className="w-4 h-4" />
             Copy Code
