@@ -17,7 +17,7 @@ const Footer = ({ previewPattern }: FooterProps) => {
               <Palette className="w-6 h-6 text-white" />
             </div>
             <span className="font-black text-2xl text-gray-900">
-              PatternCraft
+              PatternPulse
             </span>
           </div>
 
