@@ -7,3 +7,10 @@ export interface Pattern {
   badge?: string;
   description?: string;
 }
+
+export interface PatternCardProps {
+  pattern: Pattern;
+  onPreview: (pattern: Pattern) => void;
+  onCopy: (code: string, name: string) => void;
+  isCurrentlyPreviewed?: boolean;
+}
