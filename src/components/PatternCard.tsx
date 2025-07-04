@@ -1,13 +1,6 @@
 import React from "react";
 import { Eye, Copy } from "lucide-react";
-import type { Pattern } from "../types/pattern";
-
-interface PatternCardProps {
-  pattern: Pattern;
-  onPreview: (pattern: Pattern) => void;
-  onCopy: (code: string, name: string) => void;
-  isCurrentlyPreviewed?: boolean;
-}
+import type { PatternCardProps } from "../types/pattern";
 
 export const PatternCard: React.FC<PatternCardProps> = ({
   pattern,
