@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, Filter } from "lucide-react";
+import { Search } from "lucide-react";
 import type { SearchAndFilterProps } from "../types/searchAndFilter";
 
 export const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
@@ -10,48 +10,59 @@ export const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
   categories,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 mb-12">
+    <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12">
+      {/* Search Input */}
       <div className="relative flex-1">
-        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+        <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
         <input
           type="text"
           placeholder="Search patterns..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all bg-white/80 backdrop-blur-sm text-gray-900 placeholder-gray-500 shadow-sm"
+          className="w-full pl-14 pr-5 py-4 rounded-3xl bg-white shadow-md border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition"
+          autoComplete="off"
         />
       </div>
 
-      <div className="sm:w-56 relative">
-        <Filter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-        <select
-          value={selectedCategory}
-          onChange={(e) => onCategoryChange(e.target.value)}
-          className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all bg-white/80 backdrop-blur-sm text-gray-900 shadow-sm appearance-none cursor-pointer"
+      {/* Category Pills */}
+      <nav
+        aria-label="Pattern categories"
+        className="flex flex-wrap gap-4 max-w-full overflow-x-auto no-scrollbar"
+      >
+        <button
+          type="button"
+          onClick={() => onCategoryChange("")}
+          className={`select-none whitespace-nowrap px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300
+            ${
+              selectedCategory === ""
+                ? "bg-indigo-600 text-white shadow-[0_8px_15px_rgba(99,102,241,0.3)]"
+                : "bg-gray-100 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+            }
+            focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2`}
         >
-          <option value="">All Categories</option>
-          {categories.map((category) => (
-            <option key={category} value={category} className="capitalize">
-              {category}
-            </option>
-          ))}
-        </select>
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </div>
+          All
+        </button>
+
+        {categories.map((category) => {
+          const isSelected = selectedCategory === category;
+          return (
+            <button
+              key={category}
+              type="button"
+              onClick={() => onCategoryChange(isSelected ? "" : category)}
+              className={`select-none whitespace-nowrap px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer
+                ${
+                  isSelected
+                    ? "bg-indigo-600 text-white shadow-[0_8px_15px_rgba(99,102,241,0.3)]"
+                    : "bg-gray-100 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
+                }
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2`}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </button>
+          );
+        })}
+      </nav>
     </div>
   );
 };
