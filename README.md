@@ -58,7 +58,7 @@ Its goal is to help frontend developers and designers quickly find and apply vis
 ### Installation
 
 ```bash
-git clone https://github.com/Tusho7/pattern-app.git
-cd pattern-app
+git clone https://github.com/Tusho7/pattern-pulse.git
+cd pattern-pulse
 npm install
 npm run dev
