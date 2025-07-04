@@ -11,7 +11,6 @@ export const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
 }) => {
   return (
     <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-12">
-      {/* Search Input */}
       <div className="relative flex-1">
         <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
         <input
@@ -24,7 +23,6 @@ export const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
         />
       </div>
 
-      {/* Category Pills */}
       <nav
         aria-label="Pattern categories"
         className="flex flex-wrap gap-4 max-w-full overflow-x-auto no-scrollbar"
