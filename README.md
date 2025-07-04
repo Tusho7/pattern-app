@@ -1,69 +1,64 @@
-# React + TypeScript + Vite
+# 🎨 PatternPulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub Stars](https://img.shields.io/github/stars/Tusho7/pattern-app?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Tusho7/pattern-app?style=social)
 
-Currently, two official plugins are available:
+## A curated collection of beautiful, production-ready CSS background patterns and gradients.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+👉 **[Live Demo](https://pattern-pulse.vercel.app/)**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![PatternPulse Screenshot](./public/pattern.png)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 📖 About The Project
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**PatternPulse** is a modern web tool built for developers and designers. It provides a curated collection of professional-grade CSS background patterns that can be integrated into any project with a simple copy-paste — with **zero dependencies**.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Its goal is to help frontend developers and designers quickly find and apply visually appealing background patterns using modern CSS techniques — all through an intuitive interface and clean, scalable codebase.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🌟 Features
+
+| Feature               | Description                                                                 |
+|-----------------------|-----------------------------------------------------------------------------|
+| 🎨 Live Preview        | Instantly see how each pattern looks before using it                        |
+| 📋 One-click Copy      | Copy production-ready CSS code in one click                                 |
+| 🗂️ Pattern Categories   | Organized by types: geometric, gradients, effects, etc.                     |
+| 🔍 Search + Filter      | Search by name or filter by category                                        |
+| 📱 Responsive Design    | Works seamlessly across all devices                                         |
+| 💡 Modern Stack         | Built with React, TypeScript, Tailwind CSS                                 |
+| 🔒 Zero Dependencies    | All patterns use pure CSS — no JS libraries required                        |
+| 💾 MIT Licensed         | Free for commercial and personal use                                        |
+
+---
+
+## ⚙️ Tech Stack
+
+- **Framework**: React
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Icons**: Lucide React
+- **Linting**: ESLint + typescript-eslint + react-x
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js **v18+**
+- A package manager (npm, yarn, or pnpm)
+
+### Installation
+
+```bash
+git clone https://github.com/Tusho7/pattern-app.git
+cd pattern-app
+npm install
+npm run dev
